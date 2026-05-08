@@ -24,6 +24,7 @@ class UGridMesh:
         self.z = None
         self.face_nodes = None
         self.edge_nodes = None
+        self.node_faces = {}
         self.nc = Dataset(filename, "r")
         self._readMesh()
 
