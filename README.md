@@ -6,6 +6,20 @@ It is used to derive a graphical picture of model run progress while Delft3D-FM 
 
 The repository also contains a frozen MATLAB workflow in `mddPlot.m`. That script usable, but new feature development should happen in Python.
 
+## Downloading 
+
+```
+git clone git@github.com:jtunnicl/Delft3D_RunMonitor.git
+```
+You must have ssh-public keys set up in github. Otherwise, do
+```
+git clone https://github.com/jtunnicl/Delft3D_RunMonitor.git
+```
+
+```
+cd Delft3D_RunMonitor
+```
+
 ## Installation
 
 We recommend to create a Python virtual environment
@@ -23,7 +37,7 @@ This will also install dependencies.
 Run the interactive viewer from inside your output directory:
 
 ```bash
-python examples/plot.py
+python examples/quiver_plot.py data/*.nc
 ```
 
 This opens a PyVista windowteps through all time frames.
@@ -45,7 +59,7 @@ python examples/plot.py --xs-file XSects.txt
 On headless nodes (e.g. Mahuika) use `xvfb-run` to suppress the OpenGL display requirement:
 
 ```bash
-xfvb-run python examples/plot.py
+xvfb-run python examples/plot.py
 ```
 
 Run `python examples/plot.py --help` to see all options.
